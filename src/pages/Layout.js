@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SideBar from "../components/offCanvas";
+import { Card } from "react-bootstrap";
 
 const Layout = () => {
   return (
@@ -48,27 +49,29 @@ const Layout = () => {
         </Container>
       </Navbar>
       
-      <Navbar bg="light" data-bs-theme="light">
+      <Navbar bg="light" data-bs-theme="light" as={Card.Header}>
         <Container fluid>
           <Nav className="me-auto">
-            <Nav.Link >
-              <Link to="/" style={{ textDecoration: 'none'}} >Girls</Link>
+            <Nav.Link as={Link} to={"/"}>
+              Girls
             </Nav.Link>
             {/**Add Page Links for guys, couples, trans */}
-            <Nav.Link >
-              <Link to="/" style={{ textDecoration: 'none'}} >Couples</Link>
+            <Nav.Link as={Link} to={"/"}>
+              Couples
             </Nav.Link>
-            <Nav.Link >
-              <Link to="/" style={{ textDecoration: 'none'}} >Guys</Link>
+            <Nav.Link as={Link} to={"/"}>
+              Guys
             </Nav.Link>
-            <Nav.Link >
-              <Link to="/" style={{ textDecoration: 'none'}} >Trans</Link>
+            <Nav.Link as={Link} to={"/"}>
+              Trans
             </Nav.Link> 
           </Nav>
         </Container>
       </Navbar>
+      {/**Layout Outlet point */}
+      <Outlet />
 
-      <Navbar bg="light" data-bs-theme="light" fixed='bottom'>
+      <Navbar bg="light" data-bs-theme="light" sticky='bottom'>
         <Container style={{ alignItems: 'center' }}>
             <div>Join Stripchat to interact with models!</div>
             <Col xs="auto" fluid>
@@ -76,8 +79,6 @@ const Layout = () => {
             </Col>
         </Container>
       </Navbar>
-      {/**Layout Outlet point */}
-      <Outlet />
     </>
   )
 };

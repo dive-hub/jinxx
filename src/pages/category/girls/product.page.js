@@ -1,8 +1,11 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Card, Nav, Navbar } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import WebcamVideo from '../../../components/WebCamVideo';
+
 
 function ProductPage() {
   return (
@@ -10,26 +13,28 @@ function ProductPage() {
     <Navbar bg="light" data-bs-theme="light" sticky='top'>
         <Container fluid>
             <Nav className="me-auto">
-            <Nav.Link >
-                <Link to="/" style={{ textDecoration: 'none'}} >Profile</Link>
-            </Nav.Link>
+            <Nav.Link as={Link}>Profile</Nav.Link>
             {/**Add Page Links for guys, couples, trans */}
-            <Nav.Link >
-                <Link to="/" style={{ textDecoration: 'none'}} >Videos</Link>
-            </Nav.Link>
-            <Nav.Link >
-                <Link to="/" style={{ textDecoration: 'none'}} >Photos</Link>
-            </Nav.Link>
-            <Nav.Link >
-                <Link to="/" style={{ textDecoration: 'none'}} >Feed</Link>
-            </Nav.Link> 
+            <Nav.Link as={Link}>Videos</Nav.Link>
+            <Nav.Link as={Link}>Photos</Nav.Link>
+            <Nav.Link as={Link}>Feed</Nav.Link>
             </Nav>
         </Container>
     </Navbar>
-    <div >
-      <WebcamVideo/>
-    </div>
-
+    <Card>
+        <Card.Body>
+            <Container>
+                <Row>
+                    <Col>
+                    <WebcamVideo/>
+                    </Col>
+                    <Col>
+                    <WebcamVideo/>
+                    </Col>
+                </Row>
+            </Container>
+        </Card.Body>
+    </Card>
     <Outlet />
     </>
   )

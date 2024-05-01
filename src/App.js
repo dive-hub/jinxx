@@ -13,6 +13,8 @@ import Recommended from './pages/category/girls/recommended';
 import Favorites from './pages/Favorites';
 import ProductPage from './pages/category/girls/product.page';
 import About from './pages/About';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/girls/recommended" element={<Recommended />} />
           <Route path='/profile-id:name' element={<ProductPage />} />
           <Route path="favorites" element={<Favorites />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
