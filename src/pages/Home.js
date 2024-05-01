@@ -1,9 +1,9 @@
 import React from 'react'
+import { Outlet, Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { Nav } from 'react-bootstrap';
-import { Profiles } from '../utils/neo4js_sample_data/data';
+import { Profiles } from '../utils/graphql_sample_data/data';
 import { GetImageUrl } from '../utils/utils';
 
 function ProfileData({ person }) {
@@ -11,7 +11,7 @@ function ProfileData({ person }) {
   return (
     //Profile Card
     <Col>
-    <Nav.Link>
+    <Link to="/profile-id:name" style={{ textDecoration: 'none'}} >
       <img
         src={GetImageUrl(person)}
         alt={person.name}
@@ -21,7 +21,7 @@ function ProfileData({ person }) {
         {' ' + person.profession + ' '}
         known for {person.accomplishment}
       </p>
-    </Nav.Link>
+    </Link>
     </Col>
   );
 }
@@ -29,6 +29,7 @@ function ProfileData({ person }) {
 
 function Home() {
   return (
+    <>
     <Container fluid>
       <h2>African</h2>
       <Row>
@@ -159,6 +160,8 @@ function Home() {
       </Row>
       {/**To generate content from database */}
     </Container>
+    <Outlet />
+    </>
 );
 }
 export default Home;

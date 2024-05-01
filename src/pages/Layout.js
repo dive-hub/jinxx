@@ -51,10 +51,19 @@ const Layout = () => {
       <Navbar bg="light" data-bs-theme="light">
         <Container fluid>
           <Nav className="me-auto">
-            <Nav.Link href="#">Girls</Nav.Link>
-            <Nav.Link href="#couples">Couples</Nav.Link>
-            <Nav.Link href="#guys">Guys</Nav.Link>
-            <Nav.Link href="#trans">Trans</Nav.Link> 
+            <Nav.Link >
+              <Link to="/" style={{ textDecoration: 'none'}} >Girls</Link>
+            </Nav.Link>
+            {/**Add Page Links for guys, couples, trans */}
+            <Nav.Link >
+              <Link to="/" style={{ textDecoration: 'none'}} >Couples</Link>
+            </Nav.Link>
+            <Nav.Link >
+              <Link to="/" style={{ textDecoration: 'none'}} >Guys</Link>
+            </Nav.Link>
+            <Nav.Link >
+              <Link to="/" style={{ textDecoration: 'none'}} >Trans</Link>
+            </Nav.Link> 
           </Nav>
         </Container>
       </Navbar>

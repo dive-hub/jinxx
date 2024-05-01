@@ -11,6 +11,7 @@ import WatchHistory from './pages/WatchHistory';
 import Best from './pages/category/girls/best';
 import Recommended from './pages/category/girls/recommended';
 import Favorites from './pages/Favorites';
+import ProductPage from './pages/category/girls/product.page';
 import About from './pages/About';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="watchhistory" element={<WatchHistory />} />
           <Route path="/girls/best" element={<Best />} />
           <Route path="/girls/recommended" element={<Recommended />} />
+          <Route path='/profile-id:name' element={<ProductPage />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="*" element={<NoPage />} />
         </Route>
