@@ -11,12 +11,17 @@ import SideBar from "../components/offCanvas";
 import { Card, Modal } from "react-bootstrap";
 
 import LogIn from "./LogIn";
+import SignUp from "./SignUp";
 
 const Layout = () => {
-  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSigun] = useState(false);
+  
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleCloseSignup = () => setShowSigun(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleShowSignup = () => setShowSigun(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   return (
     <>
     <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
@@ -50,9 +55,11 @@ const Layout = () => {
                 <Link to="/about" style={{ textDecoration: 'none'}} >
                     About DiveHub</Link>
             </Nav.Link>
-            <Nav.Link href="#sign up"><Button>Create Free Account</Button></Nav.Link>
             <Nav.Link>
-              <Button onClick={handleShow} > Log In </Button>
+              <Button onClick={handleShowSignup}>Create Free Account</Button>
+            </Nav.Link>
+            <Nav.Link>
+              <Button onClick={handleShowLogin} > Log In </Button>
             </Nav.Link>
           </Nav>
         </Container>
@@ -77,10 +84,11 @@ const Layout = () => {
           </Nav>
         </Container>
       </Navbar>
-      {/**Layout Outlet point */}
+
+      {/**Login Modol */}
       <Modal
-        show={show}
-        onHide={handleClose}
+        show={showLogin}
+        onHide={handleCloseLogin}
         backdrop="static"
         keyboard={false}>
         <Modal.Header closeButton>
@@ -93,6 +101,24 @@ const Layout = () => {
 
         </Modal.Footer>
       </Modal>
+
+      {/**Sign Up Modols */}
+      <Modal
+        show={showSignup}
+        onHide={handleCloseSignup}
+        backdrop="static"
+        keyboard={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Create Account</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <SignUp />
+        </Modal.Body>
+        <Modal.Footer>
+
+        </Modal.Footer>
+      </Modal>
+      {/**Layout Outlet point */}
       <Outlet />
 
       <Navbar bg="light" data-bs-theme="light" sticky='bottom'>

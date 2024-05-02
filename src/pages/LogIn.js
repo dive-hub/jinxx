@@ -6,7 +6,7 @@ function LogIn() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    // Here you can implement your login logic, for simplicity let's just check if both fields are filled
+    // Login logic
     if (username && password) {
       setLoggedIn(true);
     } else {
