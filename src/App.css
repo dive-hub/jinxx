@@ -35,9 +35,21 @@
 }
 
 .button:hover {
-  background-color: #45a049;  
+  background-color: blue;  
 }
 
 .logp {
   text-align: center;
+}
+
+.containergoogle {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.logpa {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
 }

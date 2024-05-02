@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { BsGoogle, BsTwitterX } from "react-icons/bs";
+import '../App.css'
 
 function LogIn() {
   const [username, setUsername] = useState('');
@@ -15,29 +18,47 @@ function LogIn() {
   };
 
   return (
-    <div>
+    <div className='signup-container; containergoogle'>
       {!loggedIn ? (
         <form>
-          <h2>Login</h2>
           <div>
-            <label htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              placeholder='Username'
+              className='input-field'
             />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder='Password'
+              className='input-field'
             />
           </div>
-          <button type="button" onClick={handleLogin}>Login</button>
+          <div className="d-grid gap-2">
+          <Button variant="primary" size="lg" onClick={handleLogin} className='button'>
+            Log In
+          </Button>
+          <a href='' className='logpa'>Forgot password?</a>
+          </div>
+          
+          <Container className='containergoogle'>
+            <p className='logp'>Or continue with</p>
+            <Row>
+              <Col as={Button} className='button'>
+                <BsGoogle/> Google
+              </Col>
+              <Col as={Button} className='button'>
+                <BsTwitterX/> Twitter
+              </Col>
+            </Row>
+          </Container>
         </form>
       ) : (
         <div>
