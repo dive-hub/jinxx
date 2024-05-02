@@ -55,7 +55,7 @@ function SignUp() {
         <Button variant="primary" size='lg' className='button'>
           Sign up without Email
         </Button>
-          <p className='logp'>Already have an account? <a href="/login">Login</a></p>
+          <p className='logp'>Already have an account? <a href="/">Login</a></p>
       </div>
       
       
