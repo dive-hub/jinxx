@@ -8,7 +8,7 @@ function SignUp() {
   const [email, setEmail] = useState('');
 
   const handleSignUp = () => {
-    // Implement signup logic
+    // Implement Sign Up logic
     alert(`Username: ${username}, Email: ${email}`);
   };
 
