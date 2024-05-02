@@ -6,7 +6,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import Live from './pages/live';
-import Discover from './pages/Discover'
+import Discover from './pages/Discover';
 import WatchHistory from './pages/WatchHistory';
 import Best from './pages/category/girls/best';
 import Recommended from './pages/category/girls/recommended';
@@ -31,7 +31,7 @@ function App() {
           <Route path='/profile-id:name' element={<ProductPage />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
+          <Route path="/login" element={<LogIn />} />2
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+import { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,9 +8,15 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SideBar from "../components/offCanvas";
-import { Card } from "react-bootstrap";
+import { Card, Modal } from "react-bootstrap";
+
+import LogIn from "./LogIn";
 
 const Layout = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
     <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
@@ -44,7 +51,9 @@ const Layout = () => {
                     About DiveHub</Link>
             </Nav.Link>
             <Nav.Link href="#sign up"><Button>Create Free Account</Button></Nav.Link>
-            <Nav.Link href="#log in"><Button>Log In</Button></Nav.Link>
+            <Nav.Link>
+              <Button onClick={handleShow} > Log In </Button>
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -69,6 +78,21 @@ const Layout = () => {
         </Container>
       </Navbar>
       {/**Layout Outlet point */}
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <LogIn/>
+        </Modal.Body>
+        <Modal.Footer>
+
+        </Modal.Footer>
+      </Modal>
       <Outlet />
 
       <Navbar bg="light" data-bs-theme="light" sticky='bottom'>
