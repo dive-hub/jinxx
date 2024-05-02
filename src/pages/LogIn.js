@@ -45,7 +45,7 @@ function LogIn() {
           <Button variant="primary" size="lg" onClick={handleLogin} className='button'>
             Log In
           </Button>
-          <a href='' className='logpa'>Forgot password?</a>
+          <a className='logpa' href='./Home'>Forgot password?</a>
           </div>
           
           <Container className='containergoogle'>
