@@ -13,7 +13,7 @@ function SignUp() {
   };
 
   return (
-    <div className="signup-container">
+    <div className="signup-container; containergoogle">
       <h2 className='logp'>Create Account</h2>
       <div className="d-grid gap-2">
         <input
