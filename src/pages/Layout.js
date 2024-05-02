@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SideBar from "../components/offCanvas";
 import { Card, Modal } from "react-bootstrap";
+import { BsSearch } from "react-icons/bs";
 import '../App.css'
 
 import LogIn from "./LogIn";
@@ -25,39 +26,38 @@ const Layout = () => {
 
   return (
     <>
-    <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
+      <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
         <Container fluid>
           <Nav className="me-auto">
             <SideBar />
-            <Navbar.Brand>
-                <Link to="/" style={{ textDecoration: 'none'}} >DIVE-HUB</Link>
+            <Navbar.Brand as={Link} to="/">
+                DIVE-HUB
             </Navbar.Brand>
-            <Nav.Link>
-                <Link to="/live" style={{ textDecoration: 'none'}} >Live</Link>
+            <Nav.Link as={Link} to="/live">
+                Live
             </Nav.Link>
-            <Nav.Link>
-                <Link to="/live" style={{ textDecoration: 'none'}} >Top Models</Link>
+            <Nav.Link as={Link} to="/live">
+                Top Models
             </Nav.Link>
             <Form inline>
               <Row>
-                <Col xs="auto">
-                  <Form.Control
-                  type="text"
-                  placeholder="Search models, tags or countries, tip menu"
-                  className=" mr-sm-2"
-                  />
+                <Col>
+                <Form.Control
+              type="text"
+              placeholder={"Search models, tags or countries, tip menu"}
+              className="mr-sm-3"
+              />
                 </Col>
-                <Col xs="auto">
-                  <Button type="submit">Submit</Button>
+                <Col>
+                <Button type="submit"><BsSearch /></Button>
                 </Col>
               </Row>
             </Form>
-            <Nav.Link>
-                <Link to="/about" style={{ textDecoration: 'none'}} >
-                    About DiveHub</Link>
+            <Nav.Link as={Link} to="/about">
+              About DiveHub
             </Nav.Link>
             <Nav.Link>
-              <Button onClick={handleShowSignup}>Create Free Account</Button>
+              <Button onClick={handleShowSignup} > Create Free Account </Button>
             </Nav.Link>
             <Nav.Link>
               <Button onClick={handleShowLogin} > Log In </Button>
@@ -125,11 +125,16 @@ const Layout = () => {
       <Outlet />
 
       <Navbar bg="light" data-bs-theme="light" sticky='bottom'>
-        <Container style={{ alignItems: 'center' }}>
-            <div>Join Stripchat to interact with models!</div>
-            <Col xs="auto" fluid>
-              <Button type="submit">Join FREE</Button>
+        <Container className="layout-container">
+          <Row>
+            <Col>
+              <div>Join Stripchat to interact with models!</div>
             </Col>
+            <Col xs="auto">
+              <Button type="submit" className="button" onClick={handleShowSignup}>Join FREE</Button>
+            </Col>
+          </Row>
+            
         </Container>
       </Navbar>
     </>

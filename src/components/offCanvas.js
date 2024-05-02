@@ -12,7 +12,7 @@ const options = [
   },
 ];
 
-function OffCanvasExample({ name, ...props }) {
+function OffCanvas({ name, ...props }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -39,7 +39,7 @@ function SideBar() {
   return (
     <>
       {options.map((props, idx) => (
-        <OffCanvasExample key={idx} {...props} />
+        <OffCanvas key={idx} {...props} />
       ))}
     </>
   );
