@@ -1,33 +1,43 @@
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  background-color: #282c34;
-
+/* App.css */
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.Container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0 10px;
+.modal {
+  max-width: fit-content;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-img {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
+.input-field {
+  margin-bottom: 10px;
+  display: block;
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
-button {
-  background-color: crimson;
-  color: #fff;
-  margin-top: 10px;
-  padding: 10px 40px;
+.button {
   border: none;
-  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;  
+}
+
+.logp {
+  text-align: center;
 }
