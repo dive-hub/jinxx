@@ -11,6 +11,7 @@ import SideBar from "../components/offCanvas";
 import { Card, Modal } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import '../App.css'
+import '../utils/styles/layout.css'
 
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
@@ -27,7 +28,6 @@ const Layout = () => {
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
-        <Container fluid>
           <Nav className="me-auto">
             <SideBar />
             <Navbar.Brand as={Link} to="/">
@@ -63,7 +63,6 @@ const Layout = () => {
               <Button onClick={handleShowLogin} > Log In </Button>
             </Nav.Link>
           </Nav>
-        </Container>
       </Navbar>
       
       <Navbar bg="light" data-bs-theme="light" as={Card.Header}>
