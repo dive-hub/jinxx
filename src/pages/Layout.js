@@ -86,43 +86,47 @@ const Layout = () => {
         </Container>
       </Navbar>
 
-      {/**Login Modol */}
-      <Modal
-        show={showLogin}
-        onHide={handleCloseLogin}
-        backdrop="static"
-        keyboard={false}
-        className="modal">
-        <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <LogIn/>
-        </Modal.Body>
-        <Modal.Footer>
+      <Card>
+        <Card.Body id={"main"}>
+          {/**Login Modol */}
+          <Modal
+            show={showLogin}
+            onHide={handleCloseLogin}
+            backdrop="static"
+            keyboard={false}
+            className="modal">
+            <Modal.Header closeButton>
+              <Modal.Title>Login</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <LogIn/>
+            </Modal.Body>
+            <Modal.Footer>
 
-        </Modal.Footer>
-      </Modal>
+            </Modal.Footer>
+          </Modal>
 
-      {/**Sign Up Modols */}
-      <Modal
-        show={showSignup}
-        onHide={handleCloseSignup}
-        backdrop="static"
-        keyboard={false}
-        className="modal">
-        <Modal.Header closeButton>
-          <Modal.Title>Logo Here</Modal.Title>
-        </Modal.Header>
-        <Modal.Body >
-          <SignUp />
-        </Modal.Body>
-        <Modal.Footer>
+          {/**Sign Up Modols */}
+          <Modal
+            show={showSignup}
+            onHide={handleCloseSignup}
+            backdrop="static"
+            keyboard={false}
+            className="modal">
+            <Modal.Header closeButton>
+              <Modal.Title>Logo Here</Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+              <SignUp />
+            </Modal.Body>
+            <Modal.Footer>
 
-        </Modal.Footer>
-      </Modal>
-      {/**Layout Outlet point */}
-      <Outlet />
+            </Modal.Footer>
+          </Modal>
+          {/**Layout Outlet point */}
+          <Outlet />
+        </Card.Body>
+      </Card>
 
       <Navbar bg="light" data-bs-theme="light" sticky='bottom'>
         <Container className="layout-container">

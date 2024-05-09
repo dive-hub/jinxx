@@ -22,7 +22,7 @@ function OffCanvas({ name, ...props }) {
     <>
       <Nav.Link href="#">
         <BsList onClick={toggleShow}/> </Nav.Link>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      <Offcanvas show={show} onHide={handleClose} {...props} id={"mySidenav"}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
