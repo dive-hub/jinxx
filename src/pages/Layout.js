@@ -27,66 +27,64 @@ const Layout = () => {
 
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark" sticky="top" className='justify-content-end'>
-          <Nav className="me-auto">
-            <SideBar />
-            <Navbar.Brand as={Link} to="/">
-                DIVE-HUB
-            </Navbar.Brand>
-            <Nav.Link as={Link} to="/live">
-                Live
-            </Nav.Link>
-            <Nav.Link as={Link} to="/live">
-                Top Models
-            </Nav.Link>
-            <Form inline>
-              <Row>
-                <Col>
-                <Form.Control
-              type="text"
-              placeholder={"Search models, tags or countries, tip menu"}
-              className="mr-sm-3"
-              />
+      <Navbar expand="lg" className="top-nav" sticky="top">
+        <Container fluid>
+          <SideBar />
+          <Navbar.Brand as={Link} to="/">
+              DIVE-HUB
+          </Navbar.Brand>
+          <Nav.Link as={Link} to="/live">
+            Live
+          </Nav.Link>
+          <Form inline className="search">
+            <Row>
+              <Col>
+              <Form.Control
+                type="text"
+                placeholder={"Search models, tags or countries, tip menu"}
+                className="mr-sm-2"
+                />
                 </Col>
-                <Col>
-                <Button type="submit"><BsSearch /></Button>
+                <Col className="search_button">
+                  <Button type="submit"><BsSearch /></Button>
                 </Col>
-              </Row>
-            </Form>
-            <Nav.Link as={Link} to="/about">
-              About DiveHub
-            </Nav.Link>
-            <Nav.Link>
-              <Button onClick={handleShowSignup} > Create Free Account </Button>
-            </Nav.Link>
-            <Nav.Link>
-              <Button onClick={handleShowLogin} > Log In </Button>
-            </Nav.Link>
-          </Nav>
+            </Row>
+          </Form>
+          <Nav.Link as={Link} to="/about">
+            About DiveHub
+          </Nav.Link>
+          <Nav.Link>
+            <Button onClick={handleShowSignup} > Create Free Account </Button>
+          </Nav.Link>
+          <Nav.Link>
+            <Button nClick={handleShowLogin} > Log In </Button>
+          </Nav.Link>
+        </Container>
       </Navbar>
+    
       
-      <Navbar bg="light" data-bs-theme="light" as={Card.Header}>
+      <Navbar className="sub-nav" as={Card.Header}>
         <Container fluid>
           <Nav className="me-auto">
             <Nav.Link as={Link} to={"/"}>
-              Girls
+              Vehicles
             </Nav.Link>
             {/**Add Page Links for guys, couples, trans */}
             <Nav.Link as={Link} to={"/"}>
-              Couples
+              Construction Materials
             </Nav.Link>
             <Nav.Link as={Link} to={"/"}>
-              Guys
+              Clothes
             </Nav.Link>
             <Nav.Link as={Link} to={"/"}>
-              Trans
+              Services
             </Nav.Link> 
           </Nav>
         </Container>
       </Navbar>
 
       <Card>
-        <Card.Body id={"main"}>
+        <Card.Body id={"main"} className="body">
           {/**Login Modol */}
           <Modal
             show={showLogin}
@@ -127,11 +125,11 @@ const Layout = () => {
         </Card.Body>
       </Card>
 
-      <Navbar bg="light" data-bs-theme="light" sticky='bottom'>
+      <Navbar className="bottom-nav" sticky='bottom'>
         <Container className="layout-container">
           <Row>
             <Col>
-              <div>Join Stripchat to interact with models!</div>
+              <div>Join DIVE-HUB to Buy and Sell you products & services</div>
             </Col>
             <Col xs="auto">
               <Button type="submit" className="button" onClick={handleShowSignup}>Join FREE</Button>

@@ -1,5 +1,28 @@
 .top-nav {
-    width: 100%;
-    display: flex;
-    flex-basis: auto;
+    background-color: blue;
+    color: white;
+}
+
+.sub-nav {
+    color: white;
+}
+
+.search {
+    width: 50%;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.search_button {
+    padding: auto;
+}
+
+.body {
+    color: blue;
+}
+
+.bottom-nav {
+    background-color: blue;
+    color: white;
 }
