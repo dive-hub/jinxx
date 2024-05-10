@@ -20,7 +20,8 @@ function ProfileData({ person }) {
     <Col className='container'>
     <Link to="/profile-id:name">
       <Image src={GetImageUrl(person)} alt={person.name} className='profile-image'/>
-      <p>Machembe Contructors are {status.online}</p>
+      <p>{person.name} is {status.online}</p>
+      <div className="indicator"></div>
     </Link>
     </Col>
   );

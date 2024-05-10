@@ -15,4 +15,14 @@
     top: 8px;
     left: 16px;
 }
+
+.indicator {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Ensures the element is round */
+    background-color:green; /* Change color as needed */
+  }
   
