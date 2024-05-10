@@ -8,7 +8,7 @@ const options = [
   {
     name: 'dropdown',
     scroll: true,
-    backdrop: false,
+    backdrop: true,
   },
 ];
 

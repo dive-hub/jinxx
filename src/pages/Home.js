@@ -5,22 +5,22 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Profiles } from '../utils/graphql_sample_data/data';
 import { GetImageUrl } from '../utils/utils';
+import { Image } from 'react-bootstrap';
+import '../utils/styles/home.css';
 
 function ProfileData({ person }) {
+  // online or offline
+  const status = {
+    online: "Online",
+    offline: "Not Available"
+  };
 
   return (
     //Profile Card
-    <Col>
-    <Link to="/profile-id:name" style={{ textDecoration: 'none'}} >
-      <img
-        src={GetImageUrl(person)}
-        alt={person.name}
-      />
-      <p>
-        <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
-      </p>
+    <Col className='container'>
+    <Link to="/profile-id:name">
+      <Image src={GetImageUrl(person)} alt={person.name} className='profile-image'/>
+      <p>Machembe Contructors are {status.online}</p>
     </Link>
     </Col>
   );

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BsHouseDoorFill, BsPhone, BsMagic, BsLightningChargeFill, BsFillHandThumbsUpFill, BsSuitHeartFill, BsChatHeartFill } from "react-icons/bs";
 import { BiHistory } from 'react-icons/bi';
 import { GiRabbitHead } from "react-icons/gi";
@@ -66,7 +66,6 @@ function OffCanvasComponets() {
             <Nav.Link href="#" ><BsPhone />Mobile</Nav.Link>
         </Nav>
         </Offcanvas.Body>
-        <Outlet/>
     </>
 );}
 

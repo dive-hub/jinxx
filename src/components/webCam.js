@@ -3,9 +3,7 @@ import Webcam from 'react-webcam'
 
 function WebCam() {
   return (
-    <div className="App">
-      <Webcam />
-    </div>
+    <Webcam />
   )
 }
 
