@@ -41,7 +41,7 @@ const Layout = () => {
               <Col>
               <Form.Control
                 type="text"
-                placeholder={"Search models, tags or countries, tip menu"}
+                placeholder={"Search Mitumba, Vehicles, Construction materials, Clothes, Services"}
                 className="mr-sm-2"
                 />
                 </Col>
