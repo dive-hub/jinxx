@@ -57,7 +57,7 @@ const Layout = () => {
             <Button onClick={handleShowSignup} > Create Free Account </Button>
           </Nav.Link>
           <Nav.Link>
-            <Button nClick={handleShowLogin} > Log In </Button>
+            <Button onClick={handleShowLogin} > Log In </Button>
           </Nav.Link>
         </Container>
       </Navbar>
