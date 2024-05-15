@@ -1,4 +1,3 @@
-require('dotenv').config();
 var neo4j = require('neo4j-driver');
 
 (async () => {
@@ -13,11 +12,8 @@ var neo4j = require('neo4j-driver');
     const serverInfo = await driver.getServerInfo()
     console.log('Connection established')
     console.log(serverInfo)
+    return driver;
   } catch(err) {
     console.log(`Connection error\n${err}\nCause: ${err.cause}`)
   }
 })();
-
-
-{/**I need a neo4j database called live-market, with tables: user, products, subscription, availability and demo fields */}
-{/**CREATE (:User {id: 1, username: "Blessed Shammah", email: "user1@example.com", age:42, password:"1234demo"}) */}
