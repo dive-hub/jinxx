@@ -1,71 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsGoogle, BsTwitterX } from "react-icons/bs";
+import { AuthContext } from './AuthContext';
 import '../App.css'
 
 function LogIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    // Login logic
-    if (username && password) {
-      setLoggedIn(true);
+  const { login } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+    const data = await response.json();
+    if (data.success) {
+      login(data.token);
+      {/**Add redirect to User Dashboard add modol close here*/}
+      
     } else {
-      alert('Please fill in both username and password fields.');
+      console.log('Login failed');
+      alert('wrong details')
     }
   };
 
   return (
     <div className='signup-container; containergoogle'>
-      {!loggedIn ? (
-        <form>
-          <div>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder='Username'
-              className='input-field'
-            />
-          </div>
-          <div>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder='Password'
-              className='input-field'
-            />
-          </div>
-          <div className="d-grid gap-2">
-          <Button variant="primary" size="lg" onClick={handleLogin} className='button'>
-            Log In
-          </Button>
-          <a className='logpa' href='./Home'>Forgot password?</a>
-          </div>
-          
-          <Container className='containergoogle'>
-            <p className='logp'>Or continue with</p>
-            <Row>
-              <Col as={Button} className='button'>
-                <BsGoogle/> Google
-              </Col>
-              <Col as={Button} className='button'>
-                <BsTwitterX/> Twitter
-              </Col>
-            </Row>
-          </Container>
-        </form>
-      ) : (
+      <form onSubmit={handleSubmit}>
         <div>
-          <h2>Welcome, {username}!</h2>
-          <button onClick={() => setLoggedIn(false)}>Logout</button>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder='Username'
+            className='input-field'
+            required
+          />
         </div>
-      )}
+        <div>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder='Password'
+            className='input-field'
+          />
+        </div>
+        <div className="d-grid gap-2">
+        <Button variant="primary" size="lg" className='button' type='submit'>
+          Log In
+        </Button>
+        <a className='logpa' href='./Home'>Forgot password?</a>
+        </div>
+        
+        <Container className='containergoogle'>
+          <p className='logp'>Or continue with</p>
+          <Row>
+            <Col as={Button} className='button'>
+              <BsGoogle/> Google
+            </Col>
+            <Col as={Button} className='button'>
+              <BsTwitterX/> Twitter
+            </Col>
+          </Row>
+        </Container>
+      </form>
     </div>
   );
 }

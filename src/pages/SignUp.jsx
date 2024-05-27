@@ -5,16 +5,26 @@ import { BsGoogle, BsTwitterX } from "react-icons/bs";
 
 function SignUp() {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleSignUp = () => {
-    // Implement Sign Up logic
-    alert(`Username: ${username}, Email: ${email}`);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:5000/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password, email }),
+    });
+    const data = await response.json();
+    console.log(data);
   };
 
   return (
     <div className="signup-container; containergoogle">
       <h2 className='logp'>Create Account</h2>
+      <form onSubmit={handleSubmit}>
       <div className="d-grid gap-2">
         <input
           type="text"
@@ -36,8 +46,18 @@ function SignUp() {
         />
       </div>
       <div className="d-grid gap-2">
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder='Password'
+          className="input-field"
+        />
+      </div>
+      <div className="d-grid gap-2">
       
-        <Button variant="primary" size="lg" onClick={handleSignUp} className='button'>
+        <Button variant="primary" size="lg" className='button' type='submit'>
           Create Account
         </Button>
         
@@ -57,6 +77,8 @@ function SignUp() {
         </Button>
           <p className='logp'>Already have an account? <a href="/">Login</a></p>
       </div>
+      </form>
+      
       
       
     </div>
