@@ -1,5 +1,5 @@
 # App belongs to Jinxxx
-
+https://livesaleesite.netlify.app/
 ## Clone App:
 
 1. git clone "https://github.com/dive-hub/jinxx.git"
