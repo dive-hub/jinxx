@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsGoogle, BsTwitterX } from "react-icons/bs";
 import { AuthContext } from './AuthContext';
@@ -10,7 +10,7 @@ function LogIn() {
   const [password, setPassword] = useState('');
 
   const { login } = useContext(AuthContext);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ function LogIn() {
     const data = await response.json();
     if (data.success) {
       login(data.token);
-      history.push('/dashboard'); // Redirect to User Dashboard
+      navigate('/dashboard'); // Redirect to User Dashboard
       // Add modal close logic if applicable
     } else {
       console.log('Login failed');
