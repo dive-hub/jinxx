@@ -32,7 +32,7 @@ function Home() {
   return (
     <>
     <Container fluid>
-      <h2>African</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -45,7 +45,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>Kenyan Sex Cams</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -58,7 +58,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>Top Free Live Sex Cams</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -71,7 +71,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>Couples Live Sex Cams</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -84,7 +84,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>New & Trending Live Cam Girls</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -97,7 +97,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>VR Cams</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -110,7 +110,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>AI-Curated Picks</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
@@ -135,7 +135,7 @@ function Home() {
         ))}
       </Row>
       <hr/>
-      <h2>Featured Live Sex Shows</h2>
+      <h2>Seller</h2>
       <Row>
         {Profiles.map(person => (
           <ProfileData key={person.id} person={person} />
